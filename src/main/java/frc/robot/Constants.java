@@ -84,7 +84,7 @@ public final class Constants {
         // ======= intake constants ==========
         public static final int kIntakeMotorCurrentLimit = 60;
         /** Open-loop duty cycle ([-1, 1]) used for both runIntakeCommand() and reverseIntakeCommand(). */
-        public static final double kIntakeDefaultOutput = 0.8;
+        public static final double kIntakeDefaultOutput = 0.3;
         /**
          * Reserved for a future closed-loop conversion of the intake (see IntakeClass javadoc) —
          * not used yet.
@@ -104,11 +104,11 @@ public final class Constants {
          * Values below are from bench testing.
          */
         /** Open-loop duty cycle ([-1, 1]) while receiving a game piece from the intake. */
-        public static final double kLoaderFromIntakeOutput = 0.5;
+        public static final double kLoaderFromIntakeOutput = 0.7;
         /** Open-loop duty cycle ([-1, 1]) while sending a game piece back out through the intake. */
-        public static final double kLoaderToIntakeOutput = 0.3;
+        public static final double kLoaderToIntakeOutput = 0.35;
         /** Open-loop duty cycle ([-1, 1]) while feeding a game piece into the flywheel. */
-        public static final double kLoaderToFlywheelOutput = 0.6;
+        public static final double kLoaderToFlywheelOutput = 0.4;
         /**
          * Reserved for a future closed-loop conversion of the loader (same pattern as the intake) —
          * not used yet.

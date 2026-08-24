@@ -58,15 +58,15 @@ public class RobotContainer {
             )
         );
 
-        m_driverController.leftTrigger().debounce(0.5).toggleOnTrue(
+        m_driverController.leftTrigger().debounce(0.05).toggleOnTrue(
             Commands.parallel(
                 m_loader.runWithIntakeCommand(),
                 m_intake.runIntakeCommand()
             )
         );
 
-        m_driverController.rightBumper().debounce(0.5).onTrue(m_flywheel.increaseShooterSpeedCommand());
-        m_driverController.leftBumper().debounce(0.5).onTrue(m_flywheel.decreaseShooterSpeedCommand());
+        m_driverController.rightBumper().debounce(0.05).onTrue(m_flywheel.increaseShooterSpeedCommand());
+        m_driverController.leftBumper().debounce(0.05).onTrue(m_flywheel.decreaseShooterSpeedCommand());
 
 
         // Control the drive with split-stick arcade controls
@@ -99,7 +99,6 @@ public class RobotContainer {
      *
      * @return the command to run in autonomous
      */
-    
     public Command getAutonomousCommand() {
         return Autos.driveDistance(m_driveSubsystem);
     }

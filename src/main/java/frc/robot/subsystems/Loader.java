@@ -36,6 +36,7 @@ public class Loader extends SubsystemBase {
         SparkMaxConfig loaderConfig = new SparkMaxConfig();
         loaderConfig.smartCurrentLimit(kLoaderMotorCurrentLimit);
         loaderConfig.idleMode(IdleMode.kCoast);
+        loaderConfig.inverted(true); // clockwise positive
         m_loaderMotor.configure(loaderConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     }
 

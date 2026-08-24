@@ -10,7 +10,8 @@ import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.ctre.phoenix6.controls.DutyCycleOut;
 import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.signals.NeutralModeValue;
-
+import com.ctre.phoenix6.signals.InvertedValue;
+  
 import edu.wpi.first.epilogue.Logged;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -40,6 +41,7 @@ public class IntakeClass extends SubsystemBase {
 
         TalonFXConfiguration intakeConfig = new TalonFXConfiguration();
         intakeConfig.MotorOutput.NeutralMode = NeutralModeValue.Coast;
+        intakeConfig.MotorOutput.Inverted = InvertedValue.Clockwise_Positive; // or CounterClockwise_Positive
         intakeConfig.CurrentLimits.SupplyCurrentLimit = kIntakeMotorCurrentLimit;
         intakeConfig.CurrentLimits.SupplyCurrentLimitEnable = true;
         m_intakeMotor.getConfigurator().apply(intakeConfig);
