@@ -42,15 +42,8 @@ public class Loader extends SubsystemBase {
 
     /** Shared open-loop helper — runs the loader motor at the given duty cycle while active. */
     private Command runLoaderCommand(double output) {
-        return run(
-            () -> {
-                m_loaderMotor.set(output);
-            })
-            .finallyDo(
-                () -> {
-                    m_loaderMotor.stopMotor();
-                }
-            );
+        return run(() -> m_loaderMotor.set(output))
+            .finallyDo(() -> m_loaderMotor.stopMotor());
     }
 
     /**

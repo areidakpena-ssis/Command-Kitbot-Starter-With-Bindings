@@ -72,7 +72,7 @@ public class Flywheel extends SubsystemBase {
         .withName("runShooter");
     }
 
-    public Command stopShooter() {
+    public Command stopShooterCommand() {
         return runOnce( () -> m_flywheelMotor.setVoltage(0.0));
     }
 
